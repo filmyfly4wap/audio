@@ -10,31 +10,33 @@
     }
 
     /* Screen-Fit Layout (No Extra Bottom Space, Full Background Cover) */
-    .cplayer-body-scope {
-      width: 100%;
-      height: 100vh;
-      height: 100dvh;
-      color: var(--cp-text); 
-      font-family: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; 
-      line-height: 1.35;
-      background-color: var(--cp-bg);
-      background-size: cover;
-      background-position: center center;
-      background-repeat: no-repeat;
-      background-image: radial-gradient(ellipse at 50% 30%, rgba(41, 98, 255, 0.28), transparent 60%), linear-gradient(135deg, #000000 0%, #060b19 50%, #000000 100%);
-      overflow: hidden; 
-      
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      -webkit-text-size-adjust: 100% !important;
-      -webkit-tap-highlight-color: transparent !important;
-      user-select: none;
-    }
+.cplayer-body-scope {
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;
+  color: var(--cp-text); 
+  font-family: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; 
+  line-height: 1.35;
+  background-color: var(--cp-bg);
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* Background scroll karte waqt jagah par rahega */
+  background-image: radial-gradient(ellipse at 50% 30%, rgba(41, 98, 255, 0.28), transparent 60%), linear-gradient(135deg, #000000 0%, #060b19 50%, #000000 100%);
+  
+  /* OVERFLOW FIX */
+  overflow-x: hidden;
+  overflow-y: auto !important; /* Yahan se scrolling enable hogi */
+  
+  display: flex !important;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start; /* 'center' ki jagah 'flex-start' taaki scroll upar se start ho */
+  position: relative;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
     .cplayer-body-scope::before {
       content: "";
@@ -46,20 +48,25 @@
     }
 
     .cplayer-layout-container { 
-      position: relative;
-      z-index: 0;
-      width: 100%;
-      max-width: 480px; 
-      height: 100%;
-      padding: 58px 16px 12px; /* 58px accommodates fixed top nav, bottom stays clean */
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      align-items: center;
-      box-sizing: border-box;
-      font-size: 14px;
-      overflow: hidden;
-    }
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 480px; 
+  min-height: 100vh;
+  min-height: 100dvh;
+  height: auto !important; /* Fixed height hatakar auto karein */
+  margin: 0 auto !important;
+  padding: 40px 16px 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  font-size: 14px;
+  
+  /* OVERFLOW FIX */
+  overflow: visible !important;
+}
 
     /* Strict Reset for Child Elements inside layout */
     .cplayer-layout-container * {
@@ -143,6 +150,8 @@
       padding: 4px 0;
       min-height: 0;
     }
+    
+    
     .cplayer-eyebrow { 
       font-size: 10.5px; 
       color: var(--cp-accent-light); 
@@ -875,4 +884,5 @@
       font-size: 12px;
       margin-top: 20px;
     }
+
 
