@@ -71,21 +71,15 @@ body {
   max-width: 480px; 
   min-height: 100vh;
   min-height: 100dvh;
-  height: auto !important;
-  
-  /* यह लेआउट को स्क्रीन के सेंटर में लॉक करेगा */
-  margin-left: auto !important;
-  margin-right: auto !important;
-  
-  padding: 40px 16px 24px;
+  margin: 0 auto !important;
+  padding: 16px 16px 24px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  align-items: center;
-  box-sizing: border-box;
-  font-size: 14px;
-  overflow: visible !important;
+  align-items: center; /* यह सभी बच्चों (Player, Hero) को बीच में रखेगा */
+  overflow: hidden;
 }
+
 
 
     .cplayer-topbar { 
@@ -143,17 +137,17 @@ body {
     }
     
     .cplayer-hero { 
-      display: flex; 
-      flex-direction: column; 
-      align-items: center; 
-      text-align: center; 
-      width: 100%; 
-      flex: 1;
-      justify-content: space-evenly;
-      padding: 4px 0;
-      gap: 8px;
-      min-height: 0;
-    }
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; 
+  text-align: center; 
+  width: 100%; 
+  flex-grow: 1;
+  justify-content: space-evenly;
+  padding: 4px 0;
+  gap: 6px;
+}
+
     .cplayer-eyebrow { 
       font-size: 10px; 
       color: var(--cp-accent-light); 
