@@ -631,7 +631,7 @@
       pointer-events: none;
       transition: opacity 0.3s ease;
       font-size: 14px;
-      z-index: 50;
+      z-index: 55;
     }
     .cplayer-drawer-backdrop.is-opened {
       opacity: 1;
