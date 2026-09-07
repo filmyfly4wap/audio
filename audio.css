@@ -58,24 +58,29 @@
       z-index: 0;
     }
 
-    /* Centered Container that fits 1 Viewport and Expands Smoothly */
     .cplayer-layout-container { 
-      position: relative;
-      z-index: 1;
-      width: 100%;
-      max-width: 460px; 
-      min-height: 100vh;
-      min-height: 100dvh;
-      margin: 0 auto !important;
-      padding: 16px 14px 14px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      align-items: center;
-      box-sizing: border-box;
-      font-size: 14px;
-      gap: 10px;
-    }
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 480px; 
+  min-height: 100vh;
+  min-height: 100dvh;
+  height: auto !important;
+  
+  /* यह लेआउट को स्क्रीन के सेंटर में लॉक करेगा */
+  margin-left: auto !important;
+  margin-right: auto !important;
+  
+  padding: 40px 16px 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  font-size: 14px;
+  overflow: visible !important;
+}
+
 
     .cplayer-topbar { 
       display: flex; 
