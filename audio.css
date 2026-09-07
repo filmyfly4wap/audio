@@ -27,6 +27,13 @@
       --cp-chip-inactive: #a0aec0;
       --cp-white-dim: rgba(255, 255, 255, 0.7);
       --cp-white-subtle: rgba(255, 255, 255, 0.06);
+
+      /* Close Button Custom Variables */
+      --cp-btn-close-bg: rgba(255, 255, 255, 0.07);
+      --cp-btn-close-border: rgba(255, 255, 255, 0.12);
+      --cp-btn-close-hover-bg: rgba(255, 51, 75, 0.2);
+      --cp-btn-close-hover-border: rgba(255, 51, 75, 0.5);
+      --cp-btn-close-hover-glow: rgba(255, 51, 75, 0.4);
     }
     
     html, body {
@@ -65,6 +72,7 @@
       inset: 0;
       background: var(--cp-overlay-bg);
       pointer-events: none;
+      z-index: 0;
     }
 
     /* Main Container */
@@ -135,11 +143,16 @@
     }
     .cplayer-mono { font-family: 'DM Mono', monospace; letter-spacing: 1px; }
     .cplayer-clock-box { text-align: right; }
+    
+    /* Time Text Styling (GitHub CSS override proof) */
     .cplayer-clock { 
-      font-size: 13.5px; 
-      font-weight: 700; 
-      color: var(--cp-text); 
-      white-space: nowrap; 
+      font-size: 13.5px !important; 
+      font-weight: 700 !important; 
+      color: #ffffff !important; 
+      white-space: nowrap !important;
+      opacity: 1 !important;
+      visibility: visible !important;
+      display: block !important;
     }
 
     .cplayer-colon-pulse {
@@ -239,6 +252,17 @@
     .cplayer-tab-chip.is-saved-tab.is-active {
       background: var(--cp-saved) !important;
       box-shadow: 0 2px 12px rgba(255, 64, 129, 0.6);
+    }
+
+    /* Strict Search Chip Visibility: Hide by default everywhere */
+    .cplayer-tab-chip.is-search-chip {
+      display: none !important;
+    }
+    .cplayer-tab-chip.is-search-chip.is-visible {
+      display: inline-flex !important;
+      background: var(--cp-accent) !important;
+      color: var(--cp-text) !important;
+      box-shadow: 0 2px 12px rgba(41, 98, 255, 0.6);
     }
 
     /* AD BANNER */
@@ -670,38 +694,34 @@
     }
 
     /* Premium Glassmorphism Close Button */
-.cplayer-drawer-sheet__close {
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  
-  background: var(--cp-border-accent-soft);
-  color: var(--cp-muted);
-  margin-right: 7px;
-  font-size: 13.5px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  padding: 0;
-  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-  
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
-}
-
-/* Hover & Tap Effects */
-.cplayer-drawer-sheet__close:hover {
-  background: var(--cp-border-accent-soft);
-  color: var(--cp-text);
-  transform: rotate(90deg) scale(1.05);
-  
-}
-
-.cplayer-drawer-sheet__close:active {
-  transform: rotate(90deg) scale(0.92);
-}
-
+    .cplayer-drawer-sheet__close {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      border: 1px solid var(--cp-btn-close-border);
+      background: var(--cp-btn-close-bg);
+      color: var(--cp-muted);
+      font-size: 13.5px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      padding: 0;
+      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+    }
+    .cplayer-drawer-sheet__close:hover {
+      background: var(--cp-btn-close-hover-bg);
+      border-color: var(--cp-btn-close-hover-border);
+      color: var(--cp-text);
+      transform: rotate(90deg) scale(1.05);
+      box-shadow: 0 0 12px var(--cp-btn-close-hover-glow);
+    }
+    .cplayer-drawer-sheet__close:active {
+      transform: rotate(90deg) scale(0.92);
+    }
 
     .cplayer-search-capsule {
       padding: 6px 14px 8px;
@@ -843,17 +863,6 @@
       font-size: 11px;
     }
 
-    /* Dedicated Search Result Indicator Chip */
-    .cplayer-tab-chip.is-search-chip {
-      display: none;
-    }
-    .cplayer-tab-chip.is-search-chip.is-visible {
-      display: inline-flex !important;
-      background: var(--cp-accent) !important;
-      color: var(--cp-text) !important;
-      box-shadow: 0 2px 12px rgba(41, 98, 255, 0.6);
-    }
-
     /* Drawer History Bar */
     .cplayer-history-toolbar {
       display: flex;
@@ -930,5 +939,4 @@
       font-size: 12px;
       margin-top: 20px;
     }
-
 
