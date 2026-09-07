@@ -10,37 +10,16 @@
     }
     
     body {
-  margin: 0 !important;
-  padding: 0 !important;
-  width: 100vw !important;
-  min-height: 100vh !important;
-  min-height: 100dvh !important;
-  background-color: #000000 !important;
-  overflow-x: hidden !important;
-}    .cplayer-root-viewport {
-      width: 100% !important;
-      min-height: 100vh !important;
-      min-height: 100dvh !important;
-      display: grid !important;
-      place-items: start center !important;
-      /* Perfect Center Alignment */
-      background-size: cover;
-      background-position: center center;
-      background-repeat: no-repeat;
-      background-attachment: fixed;
-      position: relative !important;
-      box-sizing: border-box !important;
-    }
-    
-    .cplayer-root-viewport::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.62);
-      pointer-events: none;
-      z-index: 0;
-    }
-    /* Screen-Fit Layout (No Extra Bottom Space, Full Background Cover) */
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  min-height: 100vh;
+  min-height: 100dvh;
+  
+  overflow-x: hidden;
+}
+
+
 .cplayer-body-scope {
   width: 100%;
   min-height: 100vh;
@@ -52,17 +31,14 @@
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
-  background-attachment: fixed; /* Background scroll karte waqt jagah par rahega */
+  background-attachment: fixed;
   background-image: radial-gradient(ellipse at 50% 30%, rgba(41, 98, 255, 0.28), transparent 60%), linear-gradient(135deg, #000000 0%, #060b19 50%, #000000 100%);
-  
-  /* OVERFLOW FIX */
   overflow-x: hidden;
-  overflow-y: auto !important; /* Yahan se scrolling enable hogi */
-  
+  overflow-y: auto !important;
   display: flex !important;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start; /* 'center' ki jagah 'flex-start' taaki scroll upar se start ho */
+  justify-content: flex-start; 
   position: relative;
   margin: 0;
   padding: 0;
@@ -85,7 +61,7 @@
   max-width: 480px; 
   min-height: 100vh;
   min-height: 100dvh;
-  height: auto !important; /* Fixed height hatakar auto karein */
+  height: auto !important;
   margin: 0 auto !important;
   padding: 40px 16px 24px;
   display: flex;
@@ -94,12 +70,9 @@
   align-items: center;
   box-sizing: border-box;
   font-size: 14px;
-  
-  /* OVERFLOW FIX */
   overflow: visible !important;
 }
 
-    /* Strict Reset for Child Elements inside layout */
     .cplayer-layout-container * {
       box-sizing: border-box;
       margin: 0;
@@ -915,4 +888,6 @@
       font-size: 12px;
       margin-top: 20px;
     }
+
+
 
