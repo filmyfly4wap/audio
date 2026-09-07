@@ -35,7 +35,13 @@
       --cp-btn-close-hover-border: rgba(255, 51, 75, 0.5);
       --cp-btn-close-hover-glow: rgba(255, 51, 75, 0.4);
     }
-    
+        * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box
+    }
+    * { -webkit-tap-highlight-color: transparent !important; }
+
     html, body {
       margin: 0;
       padding: 0;
