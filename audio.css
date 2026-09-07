@@ -9,38 +9,30 @@
       --cp-saved: #ff4081;
     }
 
-    /* Screen-Fit Layout (No Extra Bottom Space, Full Background Cover & Fixed Centering) */
     html, body {
       width: 100% !important;
+      min-height: 100vh !important;
       margin: 0 !important;
       padding: 0 !important;
+      background-color: var(--cp-bg) !important;
+      overflow-x: hidden !important;
+      position: relative !important;
     }
 
-    .cplayer-body-scope {
+    body.cplayer-body-scope {
       width: 100% !important;
-      min-height: 100vh;
-      min-height: 100dvh;
+      min-height: 100vh !important;
+      min-height: 100dvh !important;
       color: var(--cp-text); 
       font-family: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; 
       line-height: 1.35;
-      background-color: var(--cp-bg);
-      background-size: cover;
-      background-position: center center;
-      background-repeat: no-repeat;
-      background-attachment: fixed;
+      background-size: cover !important;
+      background-position: center center !important;
+      background-repeat: no-repeat !important;
+      background-attachment: fixed !important;
       background-image: radial-gradient(ellipse at 50% 30%, rgba(41, 98, 255, 0.28), transparent 60%), linear-gradient(135deg, #000000 0%, #060b19 50%, #000000 100%);
-      
-      /* OVERFLOW FIX */
-      overflow-x: hidden !important;
       overflow-y: auto !important;
-      
-      /* PERFECT CENTER ALIGNMENT */
-      display: flex !important;
-      flex-direction: column !important;
-      align-items: center !important;
-      justify-content: flex-start !important;
-      text-align: center;
-      position: relative;
+      display: block !important; /* Flexbox issue ko neutralize kiya */
       margin: 0 !important;
       padding: 0 !important;
       box-sizing: border-box;
@@ -48,24 +40,29 @@
 
     .cplayer-body-scope::before {
       content: "";
-      position: absolute;
+      position: fixed;
       inset: 0;
       background: rgba(0, 0, 0, 0.62);
       pointer-events: none;
       z-index: 0;
     }
 
+    /* CENTER LOCK FIX: Absolute Center Technique jo kisi bhi external CSS se override nahi hogi */
     .cplayer-layout-container { 
-      position: relative;
-      z-index: 1;
+      position: relative !important;
+      z-index: 1 !important;
       width: 100% !important;
       max-width: 480px !important; 
-      min-height: 100vh;
-      min-height: 100dvh;
+      min-height: 100vh !important;
+      min-height: 100dvh !important;
       height: auto !important;
-      margin: 0 auto !important; /* Forces horizontal center */
-      margin-left: auto !important;
-      margin-right: auto !important;
+      
+      /* Perfect Center Lock */
+      margin: 0 auto !important;
+      left: 0 !important;
+      right: 0 !important;
+      float: none !important;
+      
       padding: 40px 16px 24px !important;
       display: flex !important;
       flex-direction: column !important;
@@ -76,20 +73,10 @@
       overflow: visible !important;
     }
 
-    /* Strict Reset for Child Elements inside layout */
     .cplayer-layout-container * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
-    }
-
-    .cplayer-layout-container span,
-    .cplayer-layout-container b,
-    .cplayer-layout-container p,
-    .cplayer-layout-container div,
-    .cplayer-layout-container a {
-      background-image: none;
-      box-shadow: none;
     }
 
     .cplayer-topbar { 
@@ -100,6 +87,7 @@
       flex-shrink: 0;
       padding-top: 2px;
     }
+
     .cplayer-brand { display: flex; align-items: center; gap: 10px; }
     .cplayer-brand__icon { 
       width: 36px; 
@@ -201,11 +189,6 @@
       font-weight: 700;
       background: transparent !important;
     }
-    .cplayer-tagline span {
-      display: inline-block !important;
-      background: transparent !important;
-      color: inherit !important;
-    }
 
     .cplayer-category-strip-wrapper {
       width: 100% !important;
@@ -226,6 +209,7 @@
       scrollbar-width: none;
     }
     .cplayer-category-scroll::-webkit-scrollbar { display: none; }
+    
     .cplayer-tab-chip {
       background: transparent;
       border: 0;
@@ -439,11 +423,6 @@
       font-size: 10px; 
       color: var(--cp-muted); 
     }
-    .cplayer-timeline-grid span {
-      background: transparent !important;
-      color: var(--cp-muted) !important;
-      padding: 0 !important;
-    }
     .cplayer-scrubber-track {
       position: relative;
       padding: 8px 0;
@@ -556,9 +535,6 @@
       font-weight: 700;
       letter-spacing: 0.8px;
     }
-    .cplayer-category-status span {
-      background: transparent !important;
-    }
     .cplayer-category-status__text {
       color: #ffffff;
       text-transform: uppercase;
@@ -566,7 +542,6 @@
     .cplayer-home-link { 
       color: var(--cp-muted) !important; 
       text-decoration: none; 
-      background: transparent !important;
     }
 
     .cplayer-quote-capsule {
@@ -726,7 +701,7 @@
       flex-shrink: 0;
     }
 
-    /* VOICE RECOGNITION SCREEN */
+    /* VOICE SCREEN */
     .cplayer-voice-screen {
       position: fixed;
       inset: 0;
@@ -756,7 +731,6 @@
       display: grid;
       place-items: center;
     }
-
     .cplayer-voice-screen__center {
       display: flex;
       flex-direction: column;
@@ -768,7 +742,6 @@
     }
     .cplayer-voice-screen__status { font-size: 18px; font-weight: 800; color: #ffffff; }
     .cplayer-voice-screen__speech { font-size: 14px; color: var(--cp-muted); min-height: 44px; font-weight: 600; }
-
     .cplayer-voice-radar {
       position: relative;
       width: 110px;
@@ -828,7 +801,7 @@
       font-size: 11px;
     }
 
-    /* Drawer History Bar */
+    /* History Bar */
     .cplayer-history-toolbar {
       display: flex;
       justify-content: space-between;
@@ -850,7 +823,7 @@
       cursor: pointer;
     }
 
-    /* Drawer Queue Items */
+    /* Queue items */
     .cplayer-track-list {
       flex: 1;
       min-height: 0;
@@ -895,4 +868,3 @@
       font-size: 12px;
       margin-top: 20px;
     }
-  
