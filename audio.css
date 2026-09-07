@@ -631,7 +631,7 @@
       pointer-events: none;
       transition: opacity 0.3s ease;
       font-size: 14px;
-      z-index: 55;
+      z-index: 60;
     }
     .cplayer-drawer-backdrop.is-opened {
       opacity: 1;
@@ -731,7 +731,7 @@
       pointer-events: none;
       transition: opacity 0.3s ease;
       font-size: 14px;
-      z-index: 60;
+      z-index: 70;
     }
     .cplayer-voice-screen.is-active { opacity: 1; pointer-events: auto; }
     .cplayer-voice-screen__top { width: 100%; max-width: 440px; display: flex; justify-content: flex-end; }
@@ -886,5 +886,4 @@
       font-size: 12px;
       margin-top: 20px;
     }
-
-
+  
