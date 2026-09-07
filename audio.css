@@ -38,6 +38,39 @@
       box-sizing: border-box;
     }
 
+
+body.cplayer-body-scope {
+  width: 100% !important;
+  min-width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  box-sizing: border-box !important;
+}
+
+body.cplayer-body-scope {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  overflow-x: hidden !important;
+  overflow-y: auto !important;
+}
+
+body.cplayer-body-scope .cplayer-layout-container {
+  width: 100% !important;
+  max-width: 480px !important;
+  min-width: 0 !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  padding-left: 16px !important;
+  padding-right: 16px !important;
+  box-sizing: border-box !important;
+  align-self: center !important;
+}
+
     .cplayer-body-scope::before {
       content: "";
       position: fixed;
