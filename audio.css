@@ -1,12 +1,12 @@
 
+  
     :root { 
       /* Core Theme Colors */
       --cp-bg: #000000;
       --cp-text: #ffffff; 
       --cp-muted: #95a3b8; 
       --cp-accent: #2962ff; 
-      --cp-accent-light: #6a95ff; 
-      --cp-danger: #ff334b;
+      --clear-history:#ff334b;
       --cp-saved: #ff4081;
 
       /* Secondary & Surface Colors */
@@ -15,7 +15,7 @@
       --cp-surface-grad-start: rgba(10, 18, 38, 0.96);
       --cp-surface-grad-end: rgba(4, 7, 18, 0.98);
       --cp-drawer-bg: #0a1122;
-      --cp-overlay-bg: rgba(0, 0, 0, 0.65);
+      --cp-overlay-bg: rgba(0, 0, 0, 0.15);
       --cp-backdrop-bg: rgba(0, 0, 0, 0.82);
       --cp-voice-bg: rgba(3, 7, 18, 0.95);
 
@@ -31,10 +31,7 @@
       /* Close Button Custom Variables */
       --cp-btn-close-bg: rgba(255, 255, 255, 0.07);
       --cp-btn-close-border: rgba(255, 255, 255, 0.12);
-      --cp-btn-close-hover-bg: rgba(255, 51, 75, 0.2);
-      --cp-btn-close-hover-border: rgba(255, 51, 75, 0.5);
-      --cp-btn-close-hover-glow: rgba(255, 51, 75, 0.4);
-    }
+      }
         * {
       margin: 0;
       padding: 0;
@@ -66,7 +63,7 @@
       justify-content: flex-start;
       position: relative;
       box-sizing: border-box;
-      
+      background-color: var(--cp-bg);
       background-size: cover;
       background-position: center top;
       background-repeat: no-repeat;
@@ -165,7 +162,7 @@
       display: inline-block !important;
       animation: cpColonPulse 2s infinite ease-in-out;
       margin: 0 1px;
-      color: var(--cp-accent-light) !important;
+      color: var(--cp-accent) !important;
       background: transparent !important;
     }
     @keyframes cpColonPulse {
@@ -189,7 +186,7 @@
     
     .cplayer-eyebrow { 
       font-size: 10.5px; 
-      color: var(--cp-accent-light); 
+      color: var(--cp-accent); 
       letter-spacing: 2.2px; 
       text-transform: uppercase;
       font-weight: 700;
@@ -321,7 +318,7 @@
       font-weight: 800;
       text-transform: uppercase;
       letter-spacing: 0.6px;
-      color: var(--cp-accent-light) !important;
+      color: var(--cp-accent) !important;
       background: rgba(41, 98, 255, 0.2) !important;
       padding: 2px 5px !important;
       border-radius: 4px !important;
@@ -432,7 +429,7 @@
     .cplayer-audio-waves__bar {
       width: 3px !important;
       height: 3px !important;
-      background: var(--cp-accent-light) !important;
+      background: var(--cp-accent) !important;
       border-radius: 2px !important;
       transition: height 0.2s ease;
       display: inline-block;
@@ -478,7 +475,7 @@
     .cplayer-scrubber-fill { 
       height: 100%; 
       width: 0; 
-      background: linear-gradient(90deg, var(--cp-accent), var(--cp-accent-light)) !important; 
+      background: linear-gradient(90deg, var(--cp-accent), var(--cp-accent)) !important; 
       border-radius: inherit; 
       position: relative;
       pointer-events: none;
@@ -756,7 +753,7 @@
     .cplayer-btn-mic {
       background: rgba(41, 98, 255, 0.15);
       border: none;
-      color: var(--cp-accent-light);
+      color: var(--cp-accent);
       width: 26px;
       height: 26px;
       border-radius: 50%;
@@ -846,7 +843,7 @@
       cursor: pointer;
     }
     .cplayer-voice-radar__trigger.is-capturing {
-      background: linear-gradient(135deg, var(--cp-danger), #c4182c);
+      background: linear-gradient(135deg, var(--clear-history), #c4182c);
     }
     .cplayer-voice-screen__hint { font-size: 10.5px; color: var(--cp-muted); }
 
@@ -881,7 +878,7 @@
       color: var(--cp-muted);
     }
     .cplayer-btn-history-clear {
-      background: var(--cp-danger);
+      background: var(--clear-history);
       color: var(--cp-text);
       border: none;
       padding: 3px 8px;
@@ -923,7 +920,7 @@
     
     /* Live Speaker Icon Badge in Queue */
     .cplayer-track-row__live-badge {
-      color: var(--cp-accent-light);
+      color: var(--cp-accent);
       font-size: 13px;
       display: flex;
       align-items: center;
@@ -945,4 +942,3 @@
       font-size: 12px;
       margin-top: 20px;
     }
-
