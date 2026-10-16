@@ -1,0 +1,42 @@
+{
+  "background": {
+    "mobile": "https://example.com/mobile-bg.jpg",
+    "desktop": "https://example.com/desktop-bg.jpg"
+  },
+  "buttons": [
+    {
+      "name": "90s-2000s",
+      "url": "https://filmyfly4wap.github.io/audio/90s-2000.json"
+    },
+    {
+      "name": "Bhojpuri",
+      "url": "https://filmyfly4wap.github.io/audio/bhojpuri.json"
+    }
+  ],
+  "text": {
+    "brandIcon": "https://via.placeholder.com/100",
+    "brandName": "Vishu Kumar",
+    "heroTag": "Playlist • Non-Stop • Enjoy",
+    "title": "cricket live.site",
+    "subTitle": "Vishu Kumar",
+    "quoteSub": "Audio Beats",
+    "tags": [
+      ["“"],
+      ["“"]
+    ],
+    "quotes": [
+      "“Volume thoda badha do.”",
+      "“Music connects hearts.”",
+      "“Pure nostalgia hits different.”"
+    ]
+  },
+  "banner": {
+    "enabled": false,
+    "img": "https://via.placeholder.com/150/2962ff/ffffff?text=BUS",
+    "category": "TRAVEL & LOCAL",
+    "title": "Keep the bus on your home screen",
+    "subtitle": "One tap, no app store, no account",
+    "addName": "Add",
+    "addUrl": "#"
+  }
+}
