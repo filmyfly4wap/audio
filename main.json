@@ -20,14 +20,14 @@
     "title": "cricketlive.site",
     "subTitle": "Official",
     "quoteSub": "THE SONG TAKES OVER",
-    "tags":  [
-    ["“Ek cutting, ek purana taraana.”", "Pure vintage music, straight from cassette era."],
-    ["“Bas ye gaana khatam hone do…”", "Chair ready. Mirror glowing. Purani playlist playing."]
-  ],
+    "tags": [
+      ["“Ek cutting, ek purana taraana.”", "Pure vintage music, straight from cassette era."],
+      ["“Bas ye gaana khatam hone do…”", "Chair ready. Mirror glowing. Purani playlist playing."]
+    ],
     "quotes": [
       "“Volume thoda badha do.”",
       "“Music connects hearts.”",
-      "“Pure nostalgia hits different.”"
+      "“Pure nostalgia hits different.”",
       "“Bas ye gaana khatam hone do…”",
       "“Radio on, scissors flowing.”",
       "“Ustaad, 90s wala gaana lagao!”",
@@ -37,7 +37,7 @@
     ]
   },
   "banner": {
-    "enabled":true,
+    "enabled": true,
     "img": "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=400&auto=format&fit=crop&q=80",
     "category": "TRAVEL & LOCAL",
     "title": "Keep the bus on your home screen",
